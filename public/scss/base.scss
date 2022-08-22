@@ -1,0 +1,26 @@
+body {
+    
+    background-image: 
+        url('../images/tumblr_n20nsebk6j1tu022ro1_1280.png'),
+        linear-gradient(
+        (var(--color-primary-yellow)), 
+        (var(--color-primary-yellow))),
+    // background-image: linear-gradient(
+    //     (var(--color-primary-bg)), 
+    //     (var(--color-primary-bg)));
+}
+
+:root {
+    --color-primary-yellow: #D6D297;
+    --color-primary-black: #111111;
+
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+    
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+}

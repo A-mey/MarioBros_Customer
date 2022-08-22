@@ -20,6 +20,7 @@ app.use(express.static('libs'));
 app.set('public', __dirname + '\public');
 app.set('css', __dirname + 'public\css');
 app.set('images', __dirname + 'public\images');
+app.set('templates', __dirname + 'public\templates');
 app.set('scripts', __dirname + '\..' + '\scripts');
 app.set('libs', __dirname + '\..' + '\libs');
 const router = express.Router();

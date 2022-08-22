@@ -1,0 +1,7 @@
+<div class="topnav">
+    <ul class="navbar">
+        <li class="navbar__element" ng-If="!isUserLoggedin" ng-click="openSignupModal()">Sign Up</li>
+        <li class="navbar__element" ng-If="isUserLoggedin">{{firstName}}</li>
+        <li class="navbar__element" ng-repeat="x in navlist">{{x}}</li>
+    </ul>
+</div>

@@ -6,51 +6,29 @@
         <script type="text/javascript" src="crypto-js.min.js"></script>
         <script type="text/javascript" src="aes.min.js"></script>
         <script type="text/javascript" src="enc-base64.min.js"></script>
-
+        <script type="application/javascript" src="md5.js"></script>
     </head>
     <body ng-app="myApp" ng-controller="smartCtrl">
 
-        <div class="notification" id="notification" onclick="closeNotification()" style="height: auto; width: fit-content; padding: 5px 10px; border-radius: 2px; box-shadow: 3px 4px #F5F5F5; cursor: pointer; text-align: center; display: none;"> </div>
 
-        <div ng-if="isUserLoggedin">
+
+        <!-- <div class="notification" id="notification" onclick="closeNotification()" style="height: auto; width: fit-content; padding: 5px 10px; border-radius: 2px; box-shadow: 3px 4px #F5F5F5; cursor: pointer; text-align: center; display: none;"> </div> -->
+
+        <!-- <div ng-if="isUserLoggedin">
             <button ng-click="logout()">Logout</button>
+        </div> -->
+
+        <div ng-controller="header">
+            <div ng-include="'templates/header.html'"></div>
         </div>
 
-        <div ng-if="!isUserLoggedin">
-            <a href="#" ng-click="loginFormRedirect()">{{formName}}</a>
-
-            <!-- Registration form -->
-            <form ng-if="!isLoginFormDisplayed" ng-submit="btnClick(registrationId, registrationPWD)" name="registrationForm" id="registrationForm">
-                <h1>Register</h1>
-                <label for="registrationId">Email Id:</label><br/>
-                <input type="text" id="registrationId" name="registrationId" ng-model="registrationId" /><br/>
-                <label for="registrationPWD">password:</label><br />
-                <input type="password" id="registrationPWD" name="registrationPWD" ng-model="registrationPWD" ng-pattern="validatePassword"/><br /><br />
-                <button value="Submit">Sign Up</button>
-            </form>
-
-            <!-- Login form -->
-            <form ng-if="isLoginFormDisplayed" ng-submit="login(loginId, loginPWD)" name="loginForm" id="loginForm">
-                <h1>Login</h1>
-                <label for="loginId">Email Id:</label><br/>
-                <input type="text" id="loginId" name="loginId" ng-model="loginId" ng-pattern="emailValidator"/><br/>
-                <label for="loginPWD">password:</label><br/>
-                <input type="password" id="loginPWD" name="loginPWD" ng-model="loginPWD" ng-pattern="validatePassword"/><br/><br/>
-                <span class="error" ng-show="loginForm.emailid.$error.pattern">Please enter a proper email id</span>
-                <!-- <span class="error" id="mobile_no_err" ng-show="loginForm.password.$error.pattern">Your password should contain atleast 8 characters, at least one capital letter, one small letter, one number and one special character</span><br> -->
-                <button value="Submit">Login</button>
-            </form>
-
-            <form ng-submit="verifyOTP(OTP)" id="OTP-modal" style="display: none">
-                <label for ="OTP">Please enter the OTP</label><br/>
-                <input type="text" id="OTP" name="OTP" ng-model="OTP">
-                <button value="submit" ng-click="">Submit</button>
-            </form>
+        <div ng-if="!isUserLoggedin" id="signupModal" ng-controller="signup" style="display: none">
+            <div ng-include="'templates/signup.html'"></div>
         </div>
 
         
 
-        <ul class="services" style>
+        <!-- <ul class="services" style>
             <li class="services__category" ng-repeat="x in services" ng-click="dropdown(x, $event)">{{x}}</li>
         </ul>
 
@@ -70,14 +48,16 @@
             <span>Confirm your request</span>
             <button type="button" ng-click="confirmOrder()">Yes</button>
             <button type="button" ng-click="cancelOrder()">No</button>
-        </div>
+        </div> -->
 
         <link rel="stylesheet" href="css/style.css">
         <script type="application/javascript" src="smartController.js"></script>
         <script type="application/javascript" src="smartServices.js"></script>
         <script type="application/javascript" src="login.js"></script>
         <script type="application/javascript" src="vanilla.js"></script>
-        <script type="application/javascript" src="md5.js"></script>
+        <script type="application/javascript" src="signup.js"></script>
+        <script type="application/javascript" src="header.js"></script>
         <script type="application/javascript" src="googlemap.js"></script>
+
     </body>
 </html>

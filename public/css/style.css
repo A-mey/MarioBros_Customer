@@ -1,2 +1,43 @@
 body {
-}
+  background-image: url("../images/tumblr_n20nsebk6j1tu022ro1_1280.png"), linear-gradient(var(--color-primary-yellow), var(--color-primary-yellow)); }
+
+:root {
+  --color-primary-yellow: #D6D297;
+  --color-primary-black: #111111;
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999; }
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--color-primary-black); }
+  .navbar__element {
+    float: right;
+    color: var(--color-primary-yellow);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px; }
+
+.signupModal {
+  background-color: var(--color-grey-light-1);
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  padding: 50px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
+#close {
+  position: absolute;
+  right: 20px;
+  top: 20px; }
