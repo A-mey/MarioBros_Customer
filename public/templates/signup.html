@@ -3,8 +3,14 @@
     
     <span id="close" ng-click="closeSignupModal()">&times;</span>
     <!-- Registration form -->
-    <form ng-if="!isLoginFormDisplayed" ng-submit="btnClick(registrationId, registrationPWD)" name="registrationForm" id="registrationForm">
+    <form ng-if="!isLoginFormDisplayed" ng-submit="btnClick(registrationfirstName, registrationLastName, registrationPhoneNo, registrationId, registrationPWD)" name="registrationForm" id="registrationForm">
         <h1>Register</h1>
+        <label for="registrationFirstName">First Name:</label><br/>
+        <input type="text" id="registrationFirstName" name="registrationFirstName" ng-model="registrationFirstName" /><br/>
+        <label for="registrationLastName">First Name:</label><br/>
+        <input type="text" id="registrationLastName" name="registrationLastName" ng-model="registrationLastName" /><br/>
+        <label for="registrationPhoneNo">Phone No</label><br/>
+        <input type="text" id="registrationPhoneNo" name="registrationPhoneNo" ng-model="registrationPhoneNo" /><br/>
         <label for="registrationId">Email Id:</label><br/>
         <input type="text" id="registrationId" name="registrationId" ng-model="registrationId" /><br/>
         <label for="registrationPWD">password:</label><br />

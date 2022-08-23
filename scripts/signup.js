@@ -15,9 +15,12 @@ app.controller('signup', function($scope) {
     //--------------------------------------------------Login section------------------------------------
 
     $scope.btnClick = btnClick;
-    function btnClick(registrationId, registrationPWD) {
+    function btnClick(registrationfirstName, registrationLastName, registrationPhoneNo, registrationId, registrationPWD) {
         if (!registrationId || !registrationPWD) {
             notificationError("Email Id and/or password cannot be blank");
+            return;
+        }
+        if (!registrationfirstName || !registrationLastName) {
             return;
         }
         if (!registrationId.match($scope.emailValidator)){
@@ -36,6 +39,11 @@ app.controller('signup', function($scope) {
                         alert("user already exists");
                     }
                     else {
+                        $scope.registartionDetails = {
+                            registrationFirstName: registrationFirstName,
+                            registrationLastName: registrationLastName,
+                            registrationPhoneNo: registrationPhoneNo || ''
+                        };
                         console.log(data);
                         sendOTP(registrationId, registrationPWD);
                     }
@@ -80,7 +88,11 @@ app.controller('signup', function($scope) {
 
     function createUser(registrationId, registrationPWD) {
         let credentials = encrypt(registrationId, registrationPWD);
-        postRequest(credentials, oURL.loginAPI, 'newUser') //register the user
+        let userData = {
+            credentials: credentials,
+            registartionDetails: $scope.registartionDetails
+        }
+        postRequest(userData, oURL.loginAPI, 'newUser') //register the user
             .then((data) => {
                 if (data) {
                     alert("Registered successfully");
