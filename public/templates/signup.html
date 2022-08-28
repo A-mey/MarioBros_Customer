@@ -3,7 +3,7 @@
     
     <span id="close" ng-click="closeSignupModal()">&times;</span>
     <!-- Registration form -->
-    <form ng-if="!isLoginFormDisplayed" ng-submit="btnClick(registrationfirstName, registrationLastName, registrationPhoneNo, registrationId, registrationPWD)" name="registrationForm" id="registrationForm">
+    <form ng-if="!isLoginFormDisplayed" ng-submit="btnClick(registrationfirstName, registrationLastName, registrationPhoneNo, registrationId, registrationPWD, registrationPWD2)" name="registrationForm" id="registrationForm">
         <h1>Register</h1>
         <label for="registrationFirstName">First Name:</label><br/>
         <input type="text" id="registrationFirstName" name="registrationFirstName" ng-model="registrationFirstName" /><br/>
@@ -13,8 +13,10 @@
         <input type="text" id="registrationPhoneNo" name="registrationPhoneNo" ng-model="registrationPhoneNo" /><br/>
         <label for="registrationId">Email Id:</label><br/>
         <input type="text" id="registrationId" name="registrationId" ng-model="registrationId" /><br/>
-        <label for="registrationPWD">password:</label><br />
-        <input type="password" id="registrationPWD" name="registrationPWD" ng-model="registrationPWD" ng-pattern="validatePassword"/><br /><br />
+        <label for="registrationPWD">Password:</label><br/>
+        <input type="password" id="registrationPWD" name="registrationPWD" ng-model="registrationPWD" ng-pattern="validatePassword"/><br />
+        <label for="registrationPWD2">Re-enter password:</label><br/>
+        <input type="password" id="registrationPWD2" name="registrationPWD2" ng-model="registrationPWD2" ng-pattern="validatePassword"/><br /><br />
         <button value="Submit">Sign Up</button>
     </form>
 

@@ -1,10 +1,5 @@
 const app = angular.module('myApp', []);
 app.controller('smartCtrl', function($scope) {
-    $scope.services = ['Pipe/Tap Fitting', 'Water Leakages', 'Repairs & Fixes', 'Installation Services'];
-
-    $scope.subservices = ['Frequently Booked', 'Basin & Sink', 'Grouting', 'Drainage Pipes', 'Bath Fitting', 'Toilet', 'Tap & Mixer', 'Water Tank', 'Motor', 'Water Pipe Connections', 'Water Filter', 'Looking for something else?'];
-    $scope.emailValidator = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/g;
-    $scope.validatePassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/g;
 
     $scope.isUserLoggedin = false;
     let cookieValue = document.cookie;
@@ -13,14 +8,14 @@ app.controller('smartCtrl', function($scope) {
         $scope.isUserLoggedin = true;
     }
 
-    $scope.isLoginFormDisplayed = true;
-    $scope.formName = "Register";
+    // $scope.isLoginFormDisplayed = true;
+    // $scope.formName = "Register";
 
-    $scope.openSingupModal = function() {
-        $scope.$on('signupModal'), function (event, data) {
-            $('#signupModal').show();
-        };
-    }
+    // $scope.openSingupModal = function() {
+    //     $scope.$on('signupModal'), function (event, data) {
+    //         $('#signupModal').show();
+    //     };
+    // }
   
 
     //--------------------------------------------------Login section------------------------------------

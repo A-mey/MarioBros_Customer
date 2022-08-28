@@ -1,35 +1,3 @@
-.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: var(--color-primary-black);
-
-    &__element{
-        float: right;
-        //display: inline-block;
-        color: var(--color-primary-yellow);
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        transition: 0.3s;
-        font-size: 17px;
-    }
-}
-
-.signupModal {
-    background-color: var(--color-grey-light-1);
-    
-    position:absolute;
-    height: fit-content;
-    width: fit-content;
-    padding: 50px;
-    left: 50%;
-    top: 50%;
-    // transform: translateX(-80%);
-    transform: translate(-50%, -50%);
-}
-
 #close {
     position: absolute;
     right: 20px;

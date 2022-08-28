@@ -19,6 +19,27 @@ function postRequest(oData, url, method) {
     })  
 }
 
+function getRequest(oData, url, method) {
+    return new Promise((resolve, reject) => {
+        $.ajax({
+            url: url + method,
+            type: "GET",
+            data: oData,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            success: function (data) {
+                resolve(data);
+            },
+            error: function (data) {
+                reject(data);
+            },
+            failure: function (data) {
+                reject(data);
+            }
+        })
+    })  
+}
+
 // function createUser(credentials) {
 //     return new Promise((resolve, reject) => {
 //         $.ajax({

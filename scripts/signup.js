@@ -15,7 +15,11 @@ app.controller('signup', function($scope) {
     //--------------------------------------------------Login section------------------------------------
 
     $scope.btnClick = btnClick;
-    function btnClick(registrationfirstName, registrationLastName, registrationPhoneNo, registrationId, registrationPWD) {
+    function btnClick(registrationfirstName, registrationLastName, registrationPhoneNo, registrationId, registrationPWD, registrationPWD2) {
+        if (registrationPWD != registrationPWD2) {
+            notificationError("Passwords do not match");
+            return;
+        }
         if (!registrationId || !registrationPWD) {
             notificationError("Email Id and/or password cannot be blank");
             return;

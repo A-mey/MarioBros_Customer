@@ -12,6 +12,14 @@ body {
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999; }
 
+li {
+  list-style: none; }
+
+#close {
+  position: absolute;
+  right: 20px;
+  top: 20px; }
+
 .navbar {
   list-style-type: none;
   margin: 0;
@@ -24,7 +32,6 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    transition: 0.3s;
     font-size: 17px; }
 
 .signupModal {
@@ -37,7 +44,11 @@ body {
   top: 50%;
   transform: translate(-50%, -50%); }
 
-#close {
-  position: absolute;
-  right: 20px;
-  top: 20px; }
+.left-panel {
+  left: 0;
+  width: 20%;
+  background-color: var(--color-grey-dark-1);
+  height: 100%; }
+
+.category__elements {
+  color: var(--color-grey-light-1); }

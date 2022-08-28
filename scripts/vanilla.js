@@ -1,5 +1,6 @@
 const oURL = {
-    loginAPI : "http://localhost:8000/"
+    loginAPI : "http://localhost:8000/",
+    productAPI : "http://localhost:8001/"
 }
 
 function notificationSuccess(msg) {
