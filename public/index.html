@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>Plumbing</title>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <title>Super Mario Bros.</title>
         <script type="text/javascript" src="angular.min.js"></script>
         <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="crypto-js.min.js"></script>
@@ -9,50 +10,35 @@
         <script type="application/javascript" src="md5.js"></script>
     </head>
     <body ng-app="myApp" ng-controller="smartCtrl">
-
-
-
-        <!-- <div class="notification" id="notification" onclick="closeNotification()" style="height: auto; width: fit-content; padding: 5px 10px; border-radius: 2px; box-shadow: 3px 4px #F5F5F5; cursor: pointer; text-align: center; display: none;"> </div> -->
-
-        <!-- <div ng-if="isUserLoggedin">
-            <button ng-click="logout()">Logout</button>
-        </div> -->
-
-        <div ng-controller="header">
-            <div ng-include="'templates/header.html'"></div>
-        </div>
-
-        <div ng-if="!isUserLoggedin" id="signupModal" ng-controller="signup" style="display: none">
-            <div ng-include="'templates/signup.html'"></div>
-        </div>
-
-        <div ng-controller="product">
-            <div ng-include="'templates/product.html'"></div>
-        </div>
+        <main class="main">
 
         
 
-        <!-- <ul class="services" style>
-            <li class="services__category" ng-repeat="x in services" ng-click="dropdown(x, $event)">{{x}}</li>
-        </ul>
 
-        <ul class="subservices" id="subservicesmenu" style="display:none">
-            <li class="subservices__category" ng-repeat="y in subservices" ng-click="popup(y, $event)">{{y}}</li>
-        </ul>
 
-        <div class="scheduler" id="scheduler" style="display:none">
-            <input type="datetime-local" ng-model="dateTime">
-            <button ng-click="submitTime()">Confirm</button>
-        </div>
+            <!-- <div class="notification" id="notification" onclick="closeNotification()" style="height: auto; width: fit-content; padding: 5px 10px; border-radius: 2px; box-shadow: 3px 4px #F5F5F5; cursor: pointer; text-align: center; display: none;"> </div> -->
 
-        <div class="confirm-modal" id="confirm-modal" style="display:none">
-            <span>{{service}}</span>
-            <span>{{subservice}}</span>
-            <span>{{dateTime}}</span>
-            <span>Confirm your request</span>
-            <button type="button" ng-click="confirmOrder()">Yes</button>
-            <button type="button" ng-click="cancelOrder()">No</button>
-        </div> -->
+            <!-- <div ng-if="isUserLoggedin">
+                <button ng-click="logout()">Logout</button>
+            </div> -->
+
+            <div class="header" ng-controller="header">
+                <div ng-include="'templates/header.html'"></div>
+            </div>
+
+            <div ng-if="!isUserLoggedin" id="signupModal" ng-controller="signup" style="display: none">
+                <div ng-include="'templates/signup.html'"></div>
+            </div>
+
+            <div class="left-panel" ng-controller="product">
+                <div ng-include="'templates/product.html'"></div>
+            </div>
+
+            <div class="home" ng-controller="home">
+                <div ng-include="'templates/home.html'"></div>
+            </div>  
+
+        </main>
 
         <link rel="stylesheet" href="css/style.css">
         <script type="application/javascript" src="smartController.js"></script>
@@ -62,7 +48,8 @@
         <script type="application/javascript" src="signup.js"></script>
         <script type="application/javascript" src="header.js"></script>
         <script type="application/javascript" src="product.js"></script>
+        <script type="application/javascript" src="home.js"></script>
         <script type="application/javascript" src="googlemap.js"></script>
-
+        
     </body>
 </html>

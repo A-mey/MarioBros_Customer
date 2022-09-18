@@ -10,6 +10,17 @@ body {
     //     (var(--color-primary-bg)));
 }
 
+.main {
+    display: grid;
+    grid-template-areas:
+    'header header header header header header'
+    'left-panel home home home home home'
+    'left-panel home home home home home';
+    gap: 0px;
+    height: 100vh;
+    width: 100vw;
+}
+
 :root {
     --color-primary-yellow: #D6D297;
     --color-primary-black: #111111;

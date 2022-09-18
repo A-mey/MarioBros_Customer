@@ -1,6 +1,13 @@
 body {
   background-image: url("../images/tumblr_n20nsebk6j1tu022ro1_1280.png"), linear-gradient(var(--color-primary-yellow), var(--color-primary-yellow)); }
 
+.main {
+  display: grid;
+  grid-template-areas: 'header header header header header header' 'left-panel home home home home home' 'left-panel home home home home home';
+  gap: 0px;
+  height: 100vh;
+  width: 100vw; }
+
 :root {
   --color-primary-yellow: #D6D297;
   --color-primary-black: #111111;
@@ -20,12 +27,16 @@ li {
   right: 20px;
   top: 20px; }
 
+.header {
+  grid-area: header; }
+
 .navbar {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: var(--color-primary-black); }
+  background-color: var(--color-primary-black);
+  position: fixed; }
   .navbar__element {
     float: right;
     color: var(--color-primary-yellow);
@@ -33,6 +44,10 @@ li {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px; }
+
+.home {
+  grid-area: home;
+  background-color: var(--color-grey-light-1); }
 
 .signupModal {
   background-color: var(--color-grey-light-1);
@@ -45,8 +60,7 @@ li {
   transform: translate(-50%, -50%); }
 
 .left-panel {
-  left: 0;
-  width: 20%;
+  grid-area: left-panel;
   background-color: var(--color-grey-dark-1);
   height: 100%; }
 

@@ -1,10 +1,14 @@
+.header {
+    grid-area: header;
+}
+
 .navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: var(--color-primary-black);
-    //position: static;
+    position: fixed;
 
     &__element{
         float: right;
@@ -15,6 +19,14 @@
         text-decoration: none;
         font-size: 17px;
     }
+}
+
+.home {
+    //position: fixed;
+    //left: 20%;
+    //top: 48px;
+    grid-area: home;
+    background-color: var(--color-grey-light-1);
 }
 
 .signupModal {
@@ -31,11 +43,12 @@
 }
 
 .left-panel {
-    left: 0;
-    width: 20%;
+    grid-area: left-panel;
+    //left: 0;
+    //width: 20%;
     background-color: var(--color-grey-dark-1);
     height: 100%;
-    //position: sticky;
+    //position: fixed;
 }
 
 .category{

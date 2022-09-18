@@ -7,6 +7,48 @@ app.controller('smartCtrl', function($scope) {
         $scope.userDetails = cookieValue.substring(9, cookieValue.length);
         $scope.isUserLoggedin = true;
     }
+    // loadCategories();
+    // // getProducts();
+
+
+    // function loadCategories() {
+    //     getRequest("", oURL.productAPI, 'getCategories')
+    //         .then((data) => {
+    //             if (data) {
+    //                 $scope.$apply($scope.categories = data.result);
+                    
+    //                 console.log("categories", $scope.categories);
+    //                 let defaultCategory = $scope.categories[0];
+    //                 //dropdown(defaultCategory);
+    //                 getProducts(defaultCategory.CategoryID);
+    //             }
+    //         })
+    // }
+
+    // function getProducts(CategoryID) {
+    //     let oData = JSON.stringify({CategoryID: CategoryID});
+    //     postRequest(oData, oURL.productAPI, 'getProducts')
+    //         .then((data) => {
+    //             if (data) {
+    //                 $scope.$apply($scope.test = data.result);
+                    
+    //                 console.log("products", $scope.test);
+    //             }
+    //         })
+    // }
+
+    $scope.dropdown = dropdown;
+    function dropdown(x) {
+        //let categoryID = x.CategoryID;
+        //let productList = $scope.products.filter(a => a.ParentID == categoryID);
+        //$scope.$emit('sendCategory', x);
+        //$rootScope.$emit('sendCategory', x);
+    }
+
+    $scope.$on('sendCategory', function(event, data) {
+        console.log(data);
+        $scope.$broadcast('_sendCategory', x);
+    })
 
     // $scope.isLoginFormDisplayed = true;
     // $scope.formName = "Register";
@@ -143,44 +185,44 @@ app.controller('smartCtrl', function($scope) {
     //--------------------------------------------------Login section end------------------------------------
     
 
-    $scope.dropdown = dropdown;
-    function dropdown(service, $event) {
-        $scope.service = service;
-        if ($scope.service){
-            $('#subservicesmenu').show();
-        }
-    }
+    // $scope.dropdown = dropdown;
+    // function dropdown(service, $event) {
+    //     $scope.service = service;
+    //     if ($scope.service){
+    //         $('#subservicesmenu').show();
+    //     }
+    // }
 
-    $scope.popup = popup;
-    function popup(subservice, $event) {
-        $scope.subservice = subservice;
-        if ($scope.subservice) {
-            $('#scheduler').show();
-        }
-    }
+    // $scope.popup = popup;
+    // function popup(subservice, $event) {
+    //     $scope.subservice = subservice;
+    //     if ($scope.subservice) {
+    //         $('#scheduler').show();
+    //     }
+    // }
 
-    $scope.submitTime = submitTime;
-    function submitTime() {
-        $scope.dateTime = $scope.dateTime.toString();
-        $('#confirm-modal').show();
-    }
+    // $scope.submitTime = submitTime;
+    // function submitTime() {
+    //     $scope.dateTime = $scope.dateTime.toString();
+    //     $('#confirm-modal').show();
+    // }
 
-    $scope.confirmOrder = confirmOrder;
-    function confirmOrder() {
-        let oData = JSON.stringify({'service': $scope.service, 'description': $scope.subservice,'dateTime': dateTime});
-        postRequest(oData, oURL.loginAPI, 'confirmOrder')
-            .then((data) => {
-                if (data) {
-                    console.log("Your request has been placed successfully");
-                }
-                else {
-                    console.log("Unable to place your request");
-                }
-            })
-    }
+    // $scope.confirmOrder = confirmOrder;
+    // function confirmOrder() {
+    //     let oData = JSON.stringify({'service': $scope.service, 'description': $scope.subservice,'dateTime': dateTime});
+    //     postRequest(oData, oURL.loginAPI, 'confirmOrder')
+    //         .then((data) => {
+    //             if (data) {
+    //                 console.log("Your request has been placed successfully");
+    //             }
+    //             else {
+    //                 console.log("Unable to place your request");
+    //             }
+    //         })
+    // }
 
-    $scope.cancelOrder = cancelOrder;
-    function cancelOrder() {
-        $('#confirm-modal').hide();
-    }
+    // $scope.cancelOrder = cancelOrder;
+    // function cancelOrder() {
+    //     $('#confirm-modal').hide();
+    // }
 });
