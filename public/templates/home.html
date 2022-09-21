@@ -6,6 +6,26 @@
             <span>{{x.Time}}</span> 
         </li>
     </ul> -->
-    <div data-ng-repeat="y in test track by $index" ng-bind="y">{{y}}</div>
+    <div data-ng-repeat="y in test track by $index">
+        <span class="img">
+            <img src="{{y.Image}}" alt="" height="100px" width="150px"/>
+        </span>
+        <span class="product">
+            <div class="product__head">
+                {{y.Product}}
+            </div>
+            <div class="product__body">
+                <div class="product__body--list" ng-If="y.Rating" data-ng-repeat="a in y.Rating track by $index">
+                    <i ng-If="a == 1" class="fa-solid fa-star"></i>
+                    <i ng-If="a == 0.5" class="fa-solid fa-star-half"></i>
+                    <!-- <i class="fa fa-thin fa-star"></i> -->
+                    <i ng-If="a == 0" class="fa fa-thin fa-star" style="color: gray"></i>
+                </div>
+                <div class="product__body--list">Rs. {{y.Price}}</div>
+                <div class="product__body--list">{{y.Time}}</div>
+            </div>
+            
+        </span>
+    </div>
 
 </div>

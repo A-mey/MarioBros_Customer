@@ -9,9 +9,35 @@ app.controller('home', function($scope, $rootScope) {
         postRequest(oData, oURL.productAPI, 'getProducts')
             .then((data) => {
                 if (data) {
+                    data.result.forEach(x => {
+                        x.Rating = getStarRatings(x.Rating, 5);
+                    })
                     $scope.$apply($scope.test = data.result);
-                    console.log("products", $scope.test);
+                    console.log($scope.test);
                 }
             })
+    }
+
+    function getStarRatings(x, n) {
+        let b = [];
+    
+    let i=0;
+    while (i < n) {
+    
+        if (x > 1) {
+            b.push(1)
+        }
+        else {
+            
+            b.push(x);
+            x = x==0.5? 0: x;
+        }
+        if (x>0){
+            x = x - 1;
+        }
+        
+        i++;
+    }
+    return b;
     }
 })

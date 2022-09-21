@@ -17,12 +17,16 @@ app.use(express.static('scripts'));
 app.use(express.static('images'));
 app.use(express.static('css'));
 app.use(express.static('libs'));
+app.use(express.static('fontawesome'));
+app.use(express.static('webfonts'));
 app.set('public', __dirname + '\public');
 app.set('css', __dirname + 'public\css');
 app.set('images', __dirname + 'public\images');
 app.set('templates', __dirname + 'public\templates');
 app.set('scripts', __dirname + '\..' + '\scripts');
 app.set('libs', __dirname + '\..' + '\libs');
+app.set('fontawesome', __dirname + '\..' + '\fontawesome-free-6.2.0-web');
+app.set('webfonts', __dirname + '\..' + '\webfonts');
 const router = express.Router();
 
 app.get('/',function(_req, res){

@@ -34,11 +34,15 @@ app.controller('product', function($scope, $rootScope) {
     //         })
     // }
 
-    // $scope.dropdown = dropdown;
+    $scope.dropdown = dropdown;
     function dropdown(x) {
         //let categoryID = x.CategoryID;
         //let productList = $scope.products.filter(a => a.ParentID == categoryID);
         //$scope.$emit('sendCategory', x);
         $rootScope.$emit('sendCategory', x);
+    }
+
+    $scope.test = function() {
+        console.log('xxxx')
     }
 })
