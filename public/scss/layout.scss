@@ -39,8 +39,8 @@
     padding: 50px;
     left: 50%;
     top: 50%;
-    // transform: translateX(-80%);
     transform: translate(-50%, -50%);
+    box-shadow: 0 3px 7px var(--color-grey-dark-3);
 }
 
 .left-panel {
@@ -57,4 +57,17 @@
     &__elements {
         color: var(--color-grey-light-1);
     }
+}
+
+.productModal {
+    background-color: var(--color-grey-light-1);
+    width: 300px;
+    position:absolute;
+    height: fit-content;
+    // width: fit-content;
+    padding: 50px;
+    left: 65%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 3px 7px var(--color-grey-dark-3);
 }

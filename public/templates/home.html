@@ -1,31 +1,72 @@
-<div>
-    <!-- <ul>
-        <li ng-repeat="y in products track by $index" data-ng-bind="y">
-            <!-- <span>{{x.product}}</span>
-            <span>Rs. {{x.Price}}</span>
-            <span>{{x.Time}}</span> 
-        </li>
-    </ul> -->
+<div class="productList">
     <div data-ng-repeat="y in test track by $index">
         <span class="img">
             <img src="{{y.Image}}" alt="" height="100px" width="150px"/>
         </span>
         <span class="product">
-            <div class="product__head">
+            <div class="product__head pointer" ng-click="openModal(y)">
                 {{y.Product}}
             </div>
             <div class="product__body">
-                <div class="product__body--list" ng-If="y.Rating" data-ng-repeat="a in y.Rating track by $index">
-                    <i ng-If="a == 1" class="fa-solid fa-star"></i>
-                    <i ng-If="a == 0.5" class="fa-solid fa-star-half"></i>
-                    <!-- <i class="fa fa-thin fa-star"></i> -->
-                    <i ng-If="a == 0" class="fa fa-thin fa-star" style="color: gray"></i>
-                </div>
+                <span class="product__body--list" ng-If="y.Rating" data-ng-repeat="a in y.starRatings track by $index">
+                    <em ng-If="a == 1" class="fa-solid fa-star" ></em>
+                    <em ng-If="a == 0.5" class="fa-solid fa-star-half"></em>
+                    <em ng-If="a == 0" class="fa fa-thin fa-star" style="color: gray"></em>
+                </span>
                 <div class="product__body--list">Rs. {{y.Price}}</div>
                 <div class="product__body--list">{{y.Time}}</div>
             </div>
             
         </span>
+
+        <div class="productModal" ng-If="showModal">
+            <!-- <span class="close" ng-click="closeProductModal()">&times;</span> -->
+            <div>
+                {{selectedProduct.title}}
+            </div>
+            <div>
+                <img src="{{selectedProduct.modalImage}}" alt="" height="100px" width="150px"/>
+            </div>
+            <div class="product__body">
+                <span class="product__body--list" ng-If="y.Rating" data-ng-repeat="a in selectedProduct.starRatings track by $index">
+                    <em ng-If="a == 1" class="fa-solid fa-star" ></em>
+                    <em ng-If="a == 0.5" class="fa-solid fa-star-half"></em>
+                    <em ng-If="a == 0" class="fa fa-thin fa-star" style="color: gray"></em>
+                </span>
+                <div class="product__body--list">Rs. {{selectedProduct.price}}</div>
+                <div class="product__body--list">{{selectedProduct.time}}</div>
+            </div>
+            <div>
+                {{selectedProduct.description}}
+            </div>
+            <div ng-If="!showBookingForm">
+                <button ng-click="closeProductModal()">Cancel</button>
+                <button ng-click="book()">Book</button>
+            </div>
+            <form ng-if="showBookingForm" ng-submit="bookNow(address, phoneNo, time)" name="bookingForm" id="bookingForm">
+                <label for="Address">Address:</label><br/>
+                <input type="text" id="Address" name="Address" ng-bind="registeredAddress" ng-model="Address" required/><br/>
+                <span ng-If="registeredAddress">
+                    <input type="checkbox" id="useSavedAddress" name="useSavedAddress" value="useSavedAddress">
+                    <label for="useSavedAddress">Use saved address</label><br>
+                </span>
+                <span ng-If="lastUsedAddress">
+                    <input type="checkbox" id="useLastUsedAddress" name="useLastUsedAddress" value="useLastUsedAddress">
+                    <label for="useLastUsedAddress">Use last used address</label><br>
+                </span>
+                <span>
+                    <input type="checkbox" id="saveAddress" name="saveAddress" value="saveAddress">
+                    <label for="saveAddress">Save address</label><br>
+                </span>
+                <label for="PhoneNo">Phone No:</label><br/>
+                <input type="text" id="PhoneNo" name="PhoneNo" ng-bind="registeredPhoneNo" ng-model="PhoneNo" required/><br/>
+                <label for="dateTime">Date and Time:</label><br/>
+                <input type="datetime-local" id="dateTime" name="dateTime" ng-model="dateTime" required/><br/><br/>
+                <button value="button" ng-click="closeBookingForm()">Cancel</button>
+                <button value="Submit">Book Now</button>
+            </form>
+        </div>
+
     </div>
 
 </div>

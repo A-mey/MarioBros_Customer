@@ -8,6 +8,12 @@ app.controller('header', function($scope) {
     }
     $scope.openSignupModal = function() {
         $('#signupModal').show();
-        $scope.$emit('signupModal', '');
+        // $scope.showSignupModal = true;
+        // $scope.$emit('signupModal', '');
+    }
+
+    $scope.logout = function() {
+        document.cookie = "Customer= ; expires = Thu, 01 Jan 1970 00:00:00 GMT";
+        location.reload();
     }
 })

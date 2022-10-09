@@ -1,7 +1,7 @@
 <html>
     <head>
         <link rel="shortcut icon" href="images/favicon.ico" />
-        <title>Super Mario Bros.</title>
+        <title>Plumbing</title>
         <script type="text/javascript" src="angular.min.js"></script>
         <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
         <script type="text/javascript" src="crypto-js.min.js"></script>
@@ -10,23 +10,14 @@
         <script type="application/javascript" src="md5.js"></script>
     </head>
     <body ng-app="myApp" ng-controller="smartCtrl">
-        <main class="main">
-
-        
-
-
-
-            <!-- <div class="notification" id="notification" onclick="closeNotification()" style="height: auto; width: fit-content; padding: 5px 10px; border-radius: 2px; box-shadow: 3px 4px #F5F5F5; cursor: pointer; text-align: center; display: none;"> </div> -->
-
-            <!-- <div ng-if="isUserLoggedin">
-                <button ng-click="logout()">Logout</button>
-            </div> -->
+        <main>
+            <div class="notification" id="notification" onclick="closeNotification()" style="height: auto; width: fit-content; padding: 5px 10px; border-radius: 2px; box-shadow: 3px 4px #F5F5F5; cursor: pointer; text-align: center; display: none;"> </div>
 
             <div class="header" ng-controller="header">
                 <div ng-include="'templates/header.html'"></div>
             </div>
 
-            <div ng-if="!isUserLoggedin" id="signupModal" ng-controller="signup" style="display: none">
+            <div ng-if="!isUserLoggedin" class="signupModal" id="signupModal" ng-controller="signup" style="display: none">
                 <div ng-include="'templates/signup.html'"></div>
             </div>
 
@@ -36,7 +27,7 @@
 
             <div class="home" ng-controller="home">
                 <div ng-include="'templates/home.html'"></div>
-            </div>  
+            </div>
 
         </main>
 

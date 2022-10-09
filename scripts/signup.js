@@ -44,7 +44,7 @@ app.controller('signup', function($scope) {
                     }
                     else {
                         $scope.registartionDetails = {
-                            registrationFirstName: registrationFirstName,
+                            registrationFirstName: registrationfirstName,
                             registrationLastName: registrationLastName,
                             registrationPhoneNo: registrationPhoneNo || ''
                         };
@@ -136,6 +136,9 @@ app.controller('signup', function($scope) {
                                         _data = JSON.stringify(_data.result);
                                         // notificationSuccess("Logged in successfully");
                                         document.cookie = `Customer=${_data}`;
+                                        $scope.registeredUser = _data.FirstName + "" + _data.LastName;
+                                        $scope.registeredAddress = _data.Address;
+                                        $scope.registeredPhoneNo = _data.PhoneNo
                                         location.reload();
                                     }
                                     else {
@@ -145,6 +148,8 @@ app.controller('signup', function($scope) {
                         }
                     })
     }
+
+    
     
     //--------------------------------------------------Login section end------------------------------------
 

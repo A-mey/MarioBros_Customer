@@ -2,14 +2,16 @@ body {
   font-family: Arial, 'Open Sans', sans-serif;
   background-image: url("../images/tumblr_n20nsebk6j1tu022ro1_1280.png"), linear-gradient(var(--color-primary-yellow), var(--color-primary-yellow)); }
 
-.main {
+main {
   display: grid;
-  grid-template-areas: 'header header header header header header' 'left-panel home home home home home' 'left-panel home home home home home';
+  grid-template-areas: 'header header header header' 'left-panel home home home' 'left-panel home home home';
   grid-template-columns: auto;
   grid-template-rows: 50px auto;
   gap: 0px;
-  height: 100vh;
-  width: 100vw; }
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0; }
 
 :root {
   --color-primary-yellow: #D6D297;
@@ -23,9 +25,13 @@ body {
   --color-grey-dark-3: #999; }
 
 li {
-  list-style: none; }
+  list-style: none;
+  cursor: pointer; }
 
-#close {
+.pointer {
+  cursor: pointer; }
+
+.close {
   position: absolute;
   right: 20px;
   top: 20px; }
@@ -33,6 +39,9 @@ li {
 .img {
   height: 100px;
   width: 150px; }
+
+.productList {
+  padding: 30px 0 0 30px; }
 
 .header {
   grid-area: header; }
@@ -65,7 +74,8 @@ li {
   padding: 50px;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3px 7px var(--color-grey-dark-3); }
 
 .left-panel {
   grid-area: left-panel;
@@ -74,3 +84,14 @@ li {
 
 .category__elements {
   color: var(--color-grey-light-1); }
+
+.productModal {
+  background-color: var(--color-grey-light-1);
+  width: 300px;
+  position: absolute;
+  height: fit-content;
+  padding: 50px;
+  left: 65%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3px 7px var(--color-grey-dark-3); }
