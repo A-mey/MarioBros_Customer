@@ -149,6 +149,25 @@ app.controller('signup', function($scope) {
                     })
     }
 
+    $scope.forgotPasswordBtn = function(changePwdEmail) {
+        let data = JSON.stringify({"emailId": changePwdEmail});
+        postRequest(data, oURL.loginAPI, 'checkRepeatUser')
+            .then((res) => {
+                if (res && !res.result) {
+                    _data = JSON.stringify({"emailId": changePwdEmail});
+                    postRequest(_data, oURL.loginAPI, 'sendResetPwdLink')
+                        .then((response) => {
+                            console.log(response);
+                        })
+                }
+            })
+    }
+
+    $scope.forgotPwdFormRedirect = function() {
+        $scope.isLoginFormDisplayed = false;
+        $scope.isForgotPwdFormDisplayed = true;
+    }
+
     
     
     //--------------------------------------------------Login section end------------------------------------

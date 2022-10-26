@@ -71,7 +71,6 @@ app.controller('home', function($scope, $rootScope) {
                 b.push(1)
             }
             else {
-                
                 b.push(x);
                 x = x==0.5? 0: x;
             }

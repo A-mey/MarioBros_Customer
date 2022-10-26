@@ -4,6 +4,7 @@ const session = require('express-session');
 const cookieParser = require("cookie-parser");
 const path = require('path');
 //const nodemailer = require('nodemailer');
+const axios = require('axios');
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(session({
 	secret: 'secret',
@@ -33,14 +34,38 @@ app.get('/',function(_req, res){
   console.log('/')
 	//res.sendFile(path.join(public + 'index.html'));
   res.sendFile(path.join('public/index.html'), { root : __dirname});  
-  });
+});
 
-  app.get('/test', function(req, res){
+app.get('/test', function(req, res){
     console.log('///////////')
     res.cookie("Customer", "{'UserID': 1}");
     //res.sendFile(path.join('public/index.html'), { root : __dirname});
     res.redirect('/');
-  });
+});
+
+app.get('/resetpassword', function(req, res){
+    console.log("1", req.query.uid);
+    let data = {uid: req.query.uid}
+    let config = {
+      url: "http://localhost:8000/verifyUID",
+      method: "POST",
+      data: data,
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+    }
+    axios(config)
+      .then((result)=>{
+        if (result.data.result == 'VALID') {
+          res.sendFile(path.join('public/resetpassword.html'), { root : __dirname});
+        }
+        else {
+          res.sendFile(path.join('public/500.html'), { root : __dirname})
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+});
 
 
 
